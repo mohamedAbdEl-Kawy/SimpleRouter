@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="mb-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <app-add-product (sendProduct)="getProduct($event)" />
+      </div>
+    </div>
+  </div>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <app-products-list [product]="newProduct" />
+    </div>
+  </div>
+
+</div>

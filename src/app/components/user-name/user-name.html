@@ -1,0 +1,12 @@
+<div class="main-container">
+
+  <div class="card">
+    <input type="text" placeholder="Enter your name..." [(ngModel)]="nm" />
+    <button (click)="nm=''">Reset</button>
+  </div>
+
+  <h1>
+    Hello {{ nm || 'Guest' }} 👋
+  </h1>
+
+</div>

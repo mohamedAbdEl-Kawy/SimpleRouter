@@ -1,0 +1,43 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow-lg rounded-4">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4 fw-bold"
+            style="background: linear-gradient(90deg,#0d6efd,#3a86ff); -webkit-background-clip: text; color: transparent;">
+            Register
+          </h2>
+
+          <form [formGroup]="regForm" (ngSubmit)="onFormSubmit()">
+
+            <div class="mb-3">
+              <input type="text" class="form-control rounded-3" placeholder="First Name" formControlName="firstName">
+            </div>
+
+            <div class="mb-3">
+              <input type="text" class="form-control rounded-3" placeholder="Last Name" formControlName="lastName">
+            </div>
+
+            <div class="mb-3">
+              <input type="email" class="form-control rounded-3" placeholder="Email Address" formControlName="email">
+            </div>
+
+            <div class="mb-3">
+              <input type="password" class="form-control rounded-3" placeholder="Password" formControlName="password">
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg rounded-3">
+                Register
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

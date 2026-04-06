@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/home" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      SimpleRouter
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/images" routerLinkActive="active">Images</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        @if (userName) {
+        <li class="nav-item ms-2">
+          <button class="btn btn-outline-light rounded-pill" (click)="logout()">Logout</button>
+        </li>
+        }@else {
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item ms-2">
+          <a class="btn btn-outline-light rounded-pill" routerLink="/register">Register</a>
+        </li>}
+      </ul>
+    </div>
+
+
+  </div>
+</nav>

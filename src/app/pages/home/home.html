@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center align-items-center vh-100 text-center bg-white">
+  <div>
+    <h1 class="display-4 fw-bold">
+      <span class="typing-text gradient-text">
+        Welcome {{ userName }} to my simple project
+      </span>
+    </h1>
+    <p class="mt-3 fs-5 text-muted">Enjoy exploring the app ✨</p>
+  </div>
+</div>
+<style>
+  .typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #0d6efd;
+    width: 0;
+    animation: typing 4s steps(35, end) forwards, blink 0.8s infinite;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #0d6efd, #3a86ff, #4cc9f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+</style>

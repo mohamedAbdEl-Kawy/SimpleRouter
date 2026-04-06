@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card shadow-lg rounded-4 border-0">
+        <div class="card-body p-5">
+          <h3 class="text-center mb-4 fw-bold">Add Product</h3>
+
+          <form [formGroup]="productsForm" (ngSubmit)="sendData()">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Product Name</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Enter product name" name="name"
+                formControlName="name">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Product Image URL</label>
+              <input type="text" class="form-control form-control-lg" placeholder="Enter image link" name="imgURL"
+                formControlName="imgURL">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Price</label>
+              <input type="number" class="form-control form-control-lg" placeholder="Enter price" name="price"
+                formControlName="price">
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Description</label>
+              <textarea class="form-control form-control-lg" rows="4" placeholder="Enter product description"
+                name="desc" formControlName="desc"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 btn-lg">
+              Add Product
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
