@@ -4,12 +4,17 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: write        # ← required to push to gh-pages branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true   # ← ensures git auth token is available
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,4 +31,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/SimpleRouter/browser   # ← Angular 17 @angular/build:application outputs here
+          folder: dist/SimpleRouter/browser
