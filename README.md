@@ -2,6 +2,8 @@
 
 A modern Angular routing demonstration application showcasing page navigation, component organization, and Bootstrap styling. This project exemplifies best practices for structuring a single-page application with multiple routes and reusable components.
 
+## Live Demo
+🔗 [https://mohamedabdel-kawy.github.io/SimpleRouter/](https://mohamedabdel-kawy.github.io/SimpleRouter/)
 ## 🚀 Quick Start
 
 ### Prerequisites
