@@ -1,5 +1,4 @@
 name: Deploy Angular to GitHub Pages
-
 on:
   push:
     branches: ["main"]
@@ -8,24 +7,23 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4        # ← bumped to v4 for consistency
         with:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci                         # ← prefer ci over install in CI
 
       - name: Build Angular app
-        run: ng build --configuration production --base-href /SimpleRouter/
+        run: npx ng build --configuration production --base-href /SimpleRouter/
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4   # ← keep at v4
         with:
           branch: gh-pages
-          folder: dist/SimpleRouter
+          folder: dist/simple-router        # ← Angular 17+ outputs lowercase
