@@ -12,18 +12,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4        # ← bumped to v4 for consistency
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm ci                         # ← prefer ci over install in CI
+        run: npm ci
 
       - name: Build Angular app
-        run: npx ng build --configuration production --base-href /SimpleRouter/
+        run: npx ng build --configuration production
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4   # ← keep at v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/simple-router        # ← Angular 17+ outputs lowercase
+          folder: dist/SimpleRouter/browser   # ← Angular 17 @angular/build:application outputs here
